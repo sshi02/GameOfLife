@@ -1,0 +1,5 @@
+Here's a little challenge! Take the three rules and        create another stable family. Careful! An unstable        family that creeps into the red will cause the colony to die!,Each cell needs to be in contact with the right amount!,
+4,4,
+10,5,
+4,-1,
+-1,-1,

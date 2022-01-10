@@ -1,0 +1,5 @@
+The last rule is a cell is birthed by a dubious affiar       between three cells if a space on the grid with no cell has exactly three neighbors. You get one cell to give    birth to a cell in the restricted space (grayed out).,Think about the neighbors of the restricted cell.,
+1,-1,
+1,-1,
+-1,-1,
+3,3,

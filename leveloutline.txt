@@ -1,0 +1,57 @@
+Instance Variables:
+levelID  <- lynchpin for naming system and identificaiton
+cellLim  <- limits cells users can place
+cellMin  <- minimum cells users are req to place
+genLim   <- limits gens model can run through
+genMin   <- minimum gens model is required to run through
+winCells <- cells that will trigger a win
+winMin   <- minimum number of alive cells that trigger a win
+winCount <- EXACT number of alive cells that trigger a win
+objecMes <- objective message for user
+hint     <- message for user if they suck
+
+Special values that need to be caught
+if either null or -1, special indication attached
+
+Construction of level:
+Given a levelID (int likely), level call a super constructor
+refering to a layout file (ex. level[levelId].csv). 
+Then, a method will use levelID to intialize the rest of the 
+instance variables. 
+Method shoudl take in levelID, search for a 
+levelData[levelID].csv file and read it. Formatting 
+specified below.
+Finally, the constructor checks for a progress file. If the 
+file does not exist, nothing happens. Else, it will load the
+user's progress. 
+
+levelData[levelID].csv structure:
+objecMes, hint,
+cellLim, cellMin,
+genLim, genMin,
+winCount, winMin,
+r1, c1, r2, c2... <- winCells
+
+Checking for a win:
+IMPORTANT INVARIANTS FOR A WIN CONDITION:
+- cellLim MUST NOT be exceeded
+- cellMin MUST be met or exceeded
+- genLim MUST NOT be exceeded. If a genLim is exceeded, we 
+  should expect the fail condition to be met.
+- genMin MUST be met or exceeded
+- winCells COULD be matching with some of the cells present 
+  within the running model.
+- winCount COULD be matched exactly and trigger a win IF AND
+  ONLY IF genMin is met.
+- winMin COULD be matched or exceeded.
+When writing a win condition checker, the MUSTs have to be
+checked first before considering the possibility of a win
+For winCount and winMin, the IF AND ONLY IF conditions only
+matter when genMin is defined.
+
+Checking for a failure:
+IMPORTANT INVARIANTS FOR A FAIL CONDITION:
+- genLim COULD be exceeded.
+- model find that an alive cell tries to generate in a kill
+  cell. To find this, the failure condition should
+  catch the return value of runGeneration().

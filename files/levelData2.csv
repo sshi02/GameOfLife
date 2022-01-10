@@ -1,0 +1,5 @@
+Here we are going to learn about the first rule of the   Game of Life. A cell dies of loneliness if it has less       than two neighbors. Here is a very stable family of fourcells. Remove two and kill off the colony in one            generation >:),You have a limit of two so make sure you use all of      them!,
+2,-1,
+1,1,
+0,-1,
+-1,-1,

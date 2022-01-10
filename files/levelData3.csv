@@ -1,0 +1,5 @@
+There are three rules. The second rule is a cell dies    from being squished by more than three neighbors.   Here is the same stable family of cells. Add a cell to    lead to the implosion of the family. You are limited to   one so choose wisely.,Add a homewrecker to live next to one of the cells,
+1,-1,
+4,-1,
+0,-1,
+-1,-1,
